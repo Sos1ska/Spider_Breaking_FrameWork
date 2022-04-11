@@ -1,4 +1,4 @@
-import requests, bs4, json
+import requests, bs4, json, datetime
 
 class Version:
     version = "0.9"
@@ -10,4 +10,6 @@ def main():
     site_json = json.loads(soup)
     Handler = site_json
     if int(Version.version) == int('%s' % (Hanlder["versionInt"]):
-        print('[ root ] - [ INFO 
+        print('[ root ] - [ INFO Not Found Update ] ' + str(datetime.datetime.now()) 
+    if int(Version.version) not int('%s' % (Handler["versionInt"]):
+        pass
