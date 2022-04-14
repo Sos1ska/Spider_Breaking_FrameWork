@@ -10,6 +10,7 @@ With this framework, you can<br>
 3) Break MAC Address<br>
 4) Punch the IP address to the host<br>
 5) Punch the IP-Address to the provider<br>
+6) Merge Python Programs (Has option with folders)
 # Ru
 Этот фреймворк находится в стадии <b>бета-тестирования</b>!<br>
 С помощью данного Фреймворка можно<br>
@@ -18,6 +19,7 @@ With this framework, you can<br>
 3) Пробить MAC-Адрес<br>
 4) Пробить IP-Адрес на хост<br>
 5) Пробить IP-Адрес на провайдера<br> 
+6) Объединить программы на Python (Имеет возможность с папками)<br>
 # Donate
 <b>QIWI</b>->qiwi.com/n/SOSISKA<br>
 # Links
