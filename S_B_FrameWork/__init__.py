@@ -18,7 +18,7 @@ def Instruction(self):
     print('>>> MainUnionCode.UnionCode(HelpFile="YOUR NAME SECOND FILE, DO NOT BET ".py"", MainFile="YOUR NAME FIRST FILE, DO NOT BET ".py"", Log=False "or True", WayHelpFile="YOUR WAY TO SECOND FILE, DO NOT BET WITH NAME FILE", WayMainFile="YOUR WAY TO FIRST FILE, DO NOT BET WITH NAME FILE"')
     print()
     print()
-    print('\t\t\UnionCodeWithDirectories\n')
+    print('\t\tUnionCodeWithDirectories\n')
     print('>>> from S_B_FrameWork import MainUnionCode')
     print('>>> MainUnionCode.UnionCodeWithDirectories(HelpFile="YOUR NAME SECOND FILE, DO NOT BET ".py"", MainFile="YOUR NAME FIRST FILE, DO NOT BET ".py"", WayHelpFile="YOUR WAY TO SECOND FILE, DO NOT BET WITH NAME FILE", WayMainFile="YOUR WAY TO FIRST FILE, DO NOT BET WITH NAME FILE"')
     print()
