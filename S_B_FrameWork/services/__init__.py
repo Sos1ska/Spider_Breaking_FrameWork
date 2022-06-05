@@ -75,6 +75,64 @@ class HandlerError():
         other = Exception
 
 class Main:
+    # New 11:30 05.06.2022
+    class CheckingPort:
+        def scan_port(self, ip, port, DM, time=float):
+            import socket
+            if DM == True:
+                send_request = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                send_request.timeout(time)
+                try:
+                    connect = send_request.connect((ip, port))
+                    _info_(View='str', TEXT='Port open %s' % (port), NickName=Root, WriteTime=True)
+                    send_request.close()
+                except:
+                    print(f'{ip}@ {port}')
+                    pass
+            elif DM == False:
+                send_request = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                send_request.timeout(time)
+                try:
+                    connect = send_request.connect((ip, port))
+                    print(f'Port open: {port}')
+                    send_request.close()
+                except:
+                    print(f'{ip}@ {port}')
+                    pass
+        ip = bytes
+        port = bytes
+        flow = True or False
+        dm = True or False
+        start = int
+        end = int
+        startwithoutflow = int
+        def __init__(self, IP, Flow, DM, start_if_Flow_equals_True, end_if_Flow_equals_True, check_port, timeout=float):
+            self.ip = IP
+            self.port = check_port
+            self.flow = Flow
+            self.dm = DM
+            self.start = start_if_Flow_equals_True
+            self.end = end_if_Flow_equals_True
+            self.startwithoutflow = check_port
+            if Flow == True:
+                check_port = None
+                for number_port in range(start_if_Flow_equals_True, end_if_Flow_equals_True):
+                    if DM == True:
+                        self.scan_port(ip=IP, port=number_port, DM=True, time=timeout)
+                    elif DM == False:
+                        self.scan_port(ip=IP, port=number_port, DM=False, time=timeout)
+            elif Flow == False:
+                start_if_Flow_equals_True = None
+                end_if_Flow_equals_True = None
+                if DM == True:
+                    self.scan_port(ip=IP, port=check_port, DM=True, time=timeout)
+                elif DM == False:
+                    self.scan_port(ip=IP, port=check_port, DM=False, time=timeout)
+            else:
+                module = load_path(way)
+                module.EndWorkCode(self=Any, text=f'Not Found meaning -> DM={DM}', error=True, name_programm='CheckingPort{class}')
+                raise HandlerError.UsersCode.other(f'Not Found meaning -> DM={DM}')
+    #
     class BreakIP:
         ip = bytes
         mode = str
