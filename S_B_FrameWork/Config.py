@@ -1,1 +1,1 @@
-WayConfig = r'D:\Development\Spider_Breaking_FrameWork-sos-utils\S_B_FrameWorkk\Config.json'
+WayConfig = r''
