@@ -1,6 +1,9 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 ![GitHub contributors](https://img.shields.io/badge/GitHub%20Contributors-1-blue)
 
+# Version
+![](https://img.shields.io/badge/Version-1.0-yellowgreen)
+
 # Spider_Breaking_FrameWork
 # En
 This framework is in <b>beta test</b>!<br>
