@@ -30,4 +30,4 @@ With this framework, you can<br>
 In this group, the latest news about Spider-Breaking appears<br>
 
 # TESTS
-![](https://img.shields.io/badge/Failed-2-red)
+![](https://img.shields.io/badge/Failed-2-red) ![](https://img.shields.io/badge/Passed-30-green)
