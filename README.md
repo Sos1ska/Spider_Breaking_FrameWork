@@ -1,5 +1,6 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 ![GitHub contributors](https://img.shields.io/badge/GitHub%20Contributors-1-blue)
+![](https://img.shields.io/github/downloads/Sos1ska/Spider_Breaking_FrameWork/total?style=for-the-badge)
 
 # Version
 ![](https://img.shields.io/badge/Version-1.0-yellowgreen)
