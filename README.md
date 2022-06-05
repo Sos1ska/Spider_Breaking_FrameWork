@@ -2,6 +2,10 @@
 ![GitHub contributors](https://img.shields.io/badge/GitHub%20Contributors-1-blue)
 ![](https://img.shields.io/github/downloads/Sos1ska/Spider_Breaking_FrameWork/total?style=for-the-badge)
 
+
+![](https://img.shields.io/github/languages/code-size/Sos1ska/Spider_Breaking_FrameWork?style=social)
+[![Followers](https://img.shields.io/github/followers/Sos1ska?style=flat-square)](https://github.com/Sos1ska?tab=followers)
+
 # Version
 ![](https://img.shields.io/badge/Version-1.0-yellowgreen)
 
