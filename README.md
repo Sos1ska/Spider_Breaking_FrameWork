@@ -4,6 +4,8 @@
 
 
 ![](https://img.shields.io/github/languages/code-size/Sos1ska/Spider_Breaking_FrameWork?style=social)
+![](https://img.shields.io/github/stars/Sos1ska/Spider_Breaking_FrameWork?style=social)
+![](https://img.shields.io/github/watchers/Sos1ska/Spider_Breaking_FrameWork?style=social)
 
 
 [![Followers](https://img.shields.io/github/followers/Sos1ska?style=flat-square)](https://github.com/Sos1ska?tab=followers)
