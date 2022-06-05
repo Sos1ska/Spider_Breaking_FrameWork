@@ -28,12 +28,6 @@ With this framework, you can<br>
 [![Group Vk](https://img.shields.io/badge/Group-VK-blue)](https://vk.com/spider_breaking)<br>
 В данной группе будут свежие новости о Spider-Breaking<br>
 In this group, the latest news about Spider-Breaking appears<br>
-# Update
-# RU
-Добавили:<br>
-1) Создателя Toast для Termux<br>
-2) Создателя уведомлений для Windows и Termux<br>
-# EN
-Added:<br>
-1) Toast creator for Termux<br>
-2) Appointment Creator for Windows and Termux<br>
+
+# TESTS
+![](https://img.shields.io/badge/Failed-2-red)
