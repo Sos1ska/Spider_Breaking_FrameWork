@@ -3,7 +3,6 @@
 # Link VK -> https://vk.com/nikitasos1ska
 from typing import Any
 from .Form import FORM_CREATE_SH_NOTIFICATION, FORM_CREATE_SH_TOAST
-from ....Config import WayConfig
 import os, sys, json
 
 
