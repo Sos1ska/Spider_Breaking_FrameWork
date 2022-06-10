@@ -5,7 +5,6 @@ from typing import Any
 from .Form import FORM_CREATE_VBS
 from ...LOGer import _info_, _debug_
 from .ListParametersMSG import *
-from ....Config import WayConfig
 import random, os, subprocess, sys, json
 
 root = 'root'
