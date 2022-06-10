@@ -17,9 +17,6 @@ def load_path(filepath):
 
     return __import__(modulename)
 
-with open(WayConfig, 'r') as file_j:
-    data = json.load(file_j)
-way = data["Way"]
 
 class MainCode_CreaterNotificationForTermux:
     text=str
@@ -47,5 +44,5 @@ class MainCode_CreaterNotificationForTermux:
                 time.sleep(10)
                 os.remove(f'sh {dir}/{name_file}.sh')
         except Exception as e:
-            my_module = load_path(way)
+            my_module = load_path(r'S_B_FrameWork\services\endworkcode.pyc')
             my_module.EndWorkCode(self=Any, text=e, error=True, name_programm='CreateNotification[S_B_FrameWork].py')
