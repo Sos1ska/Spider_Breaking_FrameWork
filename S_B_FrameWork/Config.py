@@ -1,1 +1,0 @@
-WayConfig = r''
