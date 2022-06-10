@@ -5,7 +5,6 @@ import datetime, requests, bs4, json, time, os, sys
 from typing import Any
 from .LOGer import _error_, _debug_, _info_, _warning_
 from .unioncode import Main as MainUnionCode
-from ..Config import WayConfig
 
 Root = 'root'
 
@@ -129,7 +128,7 @@ class Main:
                 elif DM == False:
                     self.scan_port(ip=IP, port=check_port, DM=False, time=timeout)
             else:
-                module = load_path(way)
+                module = load_path(r'S_B_FrameWork\services\endworkcode.pyc')
                 module.EndWorkCode(self=Any, text=f'Not Found meaning -> DM={DM}', error=True, name_programm='CheckingPort{class}')
                 raise HandlerError.UsersCode.other(f'Not Found meaning -> DM={DM}')
     #
@@ -1542,14 +1541,14 @@ class Main_One_Dot_Zero:
                                 _info_(View='txt', TEXT='Not Found Information')
                     except requests.exceptions.ProxyError:
                         _error_(View='str', TEXT='Proxy server not working or no internet access', NickName=Root, Sender='BreakIP', TypeError='CRITICAL', TypeMSG='Important')
-                        my_module = load_path(way)
+                        my_module = load_path(r'S_B_FrameWork\services\endworkcode.pyc')
                         my_module.EndWorkCode(self=Any, text='Proxt server not working or no internet access', error=True, name_programm='BreakIP{class}')
                         raise HandlerError.UsersCode.other('Proxy server not working or no internet access')
             except KeyboardInterrupt as ki:
                 _warning_(View='str', TEXT='KeyboardInterrupt', NickName=Root, TypeMSG='Message')
                 time.sleep(2)
                 _error_(View='str', TEXT='KeyboardInterrupt', NickName=Root, Sender='BreakIP', TypeError='WARNING', TypeMSG='Message')
-                my_module = load_path(way)
+                my_module = load_path(r'S_B_FrameWork\services\endworkcode.pyc')
                 my_module.EndWorkCode(self=Any, text=ki, error=True, name_programm='BreakIP{class}')
                 raise Sos1skaKeyboardInterrupt('KeyboardInterrupt, pressed "CTRL+C"')
     class BreakNumber:
@@ -1978,14 +1977,14 @@ class Main_One_Dot_Zero:
                                     _info_(View='txt', TEXT='Not Found Information')
                     except requests.exceptions.ProxyError:
                         _error_(View='str', TEXT='Proxy server not working or no internet access', NickName=Root, Sender='BreakNumber', TypeError='CRITICAL', TypeMSG='Important')
-                        my_module = load_path(way)
+                        my_module = load_path(r'S_B_FrameWork\services\endworkcode.pyc')
                         my_module.EndWorkCode(self=Any, text='Proxy server not working or no internet access', error=True, name_programm='BreakNumber{class}')
                         raise HandlerError.UsersCode.other('Proxy server not working or no internet access')
             except KeyboardInterrupt as ki:
                 _warning_(View='str', TEXT='KeyboardInterrupt', NickName=Root, TypeMSG='Message')
                 time.sleep(2)
                 _error_(View='str', TEXT='KeyboardInterrupt', NickName=Root, Sender='BreakNumber', TypeError='WARNING', TypeMSG='Message')
-                my_module = load_path(way)
+                my_module = load_path(r'S_B_FrameWork\services\endworkcode.pyc')
                 my_module.EndWorkCode(self=Any, text=ki, error=True, name_programm='BreakNumber{class}')
                 raise Sos1skaKeyboardInterrupt('KeyboardInterrupt, pressed "CTRL+C"')
     class BreakISP:
@@ -2222,14 +2221,14 @@ class Main_One_Dot_Zero:
                                     _info_(View='txt', TEXT='Not Found Information')
                     except requests.exceptions.ProxyError:
                         _error_(View='str', TEXT='Proxy server not working or no internet access', NickName=Root, Sender='BreakISP', TypeError='CRITICAL', TypeMSG='Important')
-                        my_module = load_path(way)
+                        my_module = load_path(r'S_B_FrameWork\services\endworkcode.pyc')
                         my_module.EndWorkCode(self=Any, text='Proxy server not working or no internet access', error=True, name_programm='BreakISP{class}')
                         raise HandlerError.UsersCode.other('Proxy server not working or no internet access')
             except KeyboardInterrupt as ki:
                 _warning_(View='str', TEXT='KeyboardInterrupt', NickName=Root, TypeMSG='Message')
                 time.sleep(2)
                 _error_(View='str', TEXT='KeyboardInterrupt', NickName=Root, Sender='BreakISP', TypeError='WARNING', TypeMSG='Message')
-                my_module = load_path(way)
+                my_module = load_path(r'S_B_FrameWork\services\endworkcode.pyc')
                 my_module.EndWorkCode(self=Any, text=ki, error=True, name_programm='BreakISP{class}')
                 raise Sos1skaKeyboardInterrupt('KeyboardInterrupt, pressed "CTRL+C"')
     class BreakMAC:
@@ -2498,13 +2497,13 @@ class Main_One_Dot_Zero:
                                     _info_(View='txt', TEXT='Not Found Information')
                     except requests.exceptions.ProxyError:
                         _error_(View='str', TEXT='Proxy server not working or no internet access', NickName=Root, Sender='BreakMAC', TypeError='CRITICAL', TypeMSG='Important')
-                        my_module = load_path(way)
+                        my_module = load_path(r'S_B_FrameWork\services\endworkcode.pyc')
                         my_module.EndWorkCode(self=Any, text='Proxy server not working or no internet access', error=True, name_programm='BreakMAC{class}')
                         raise HandlerError.UsersCode.other('Proxy server not working or no internet access')
             except KeyboardInterrupt as ki:
                 _warning_(View='str', TEXT='KeyboardInterrupt', NickName=Root, TypeMSG='Message')
                 time.sleep(2)
                 _error_(View='str', TEXT='KeyboardInterrupt', NickName=Root, Sender='BreakMAC', TypeError='WARNING', TypeMSG='Message')
-                my_module = load_path(way)
+                my_module = load_path(r'S_B_FrameWork\services\endworkcode.pyc')
                 my_module.EndWorkCode(self=Any, text=ki, error=True, name_programm='BreakMAC{class}')
                 raise Sos1skaKeyboardInterrupt('KeyboardInterrupt, pressed "CTRL+C"')
