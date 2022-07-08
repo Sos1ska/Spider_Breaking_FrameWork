@@ -74,6 +74,126 @@ class HandlerError():
         other = Exception
 
 class Main:
+    # New 9:40 08.07.2022
+    class EXE:
+        class BreakIP:
+            ip = bytes
+            mode = str
+            nick = str
+            def __init__(self, IP, MODE, NickName, load_proxy=None):
+                self.ip=IP
+                self.mode=MODE
+                self.nick=NickName
+                try:
+                    if MODE == 'Full':
+                        if load_proxy == None:
+                            send_requests = requests.get(f'https://ip-api.com/json{IP}')
+                            answer = send_requests
+                            soup_json = bs4.BeautifulSoup(answer.text, 'html.parser').text.strip()
+                            site_json = json.loads(soup_json)
+                            Handler = site_json
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["status"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["country"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["countryCode"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["region"]) + '%s' % (Handler["regionName"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["city"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["zip"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["lat"]) + '%s' % (Handler["lon"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["timezone"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["isp"]) + '%s' % (Handler["org"]) + '%s' % (Handler["as"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                        elif load_proxy is not None:
+                            try:
+                                send_requests = requests.get(f'https://ip-api.com/json{IP}', proxies=load_proxy)
+                                answer = send_requests
+                                soup_json = bs4.BeautifulSoup(answer.text, 'html.parser').text.strip()
+                                site_json = json.loads(soup_json)
+                                Handler = site_json
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["status"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["country"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["countryCode"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["region"]) + '%s' % (Handler["regionName"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["city"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["zip"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["lat"]) + '%s' % (Handler["lon"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["timezone"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["isp"]) + '%s' % (Handler["org"]) + '%s' % (Handler["as"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                            except requests.exceptions.ProxyError:
+                                _error_(View='str', TEXT='Proxy server not working or no internet access', NickName=Root, Sender='BreakIP', TypeError='CRITICAL', TypeMSG='Important')
+                                showerror('ERROR', _error_(View='txt', TEXT='Proxy server not working or no internet access', NickName=Root, Sender='BreakIP', TypeError='CRITICAL', TypeMSG='Important'))
+                                raise HandlerError.UsersCode.other('Proxy server not working or no internet access')
+#                    elif MODE == 'Short':
+#                        if load_proxy == None:
+#                            send_requests = requests.get(f'https://ip-api.com/json{IP}')
+#                            answer = send_requests
+#                            soup_json = bs4.BeautifulSoup(answer.text, 'html.parser').text.strip()
+#                            site_json = json.loads(soup_json)
+#                            Handler = site_json
+#                            try:
+#                                return Handler["status"]
+#                            except KeyError:
+#                                t = 'Not Found Information'
+#                                return t
+#                        elif load_proxy is not None:
+#                            pass
+                except KeyboardInterrupt:
+                    _warning_(View='str', TEXT='KeyboardInterrupt', NickName=Root, TypeMSG='Message')
+                    time.sleep(2)
+                    _error_(View='str', TEXT='KeyboardInterrupt', NickName=Root, Sender='BreakIP', TypeError='WARNING', TypeMSG='Message')
+                    raise Sos1skaKeyboardInterrupt('KeyboardInterrupt, pressed "CTRL+C"')
     # New 11:30 05.06.2022
     class CheckingPort:
         def scan_port(self, ip, port, DM, time=float):
