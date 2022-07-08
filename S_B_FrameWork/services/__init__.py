@@ -76,6 +76,134 @@ class HandlerError():
 class Main:
     # New 9:40 08.07.2022
     class EXE:
+        class BreakNumber:
+            number=bytes
+            mode=str
+            nick=str
+            def __init__(self, Number, MODE, NickName, load_proxy=None):
+                self.number=Number
+                self.mode=MODE
+                self.nick=NickName
+                try:
+                    if MODE == 'Full':
+                        if load_proxy == None:
+                            send_requests = requests.get(f'https://htmlweb.ru/json/mnp/phone/{Number}')
+                            answer = send_requests
+                            soup_json = bs4.BeautifulSoup(answer.text, 'html.parser').text.strip()
+                            site_json = json.loads(soup_json)
+                            Handler = site_json
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["status"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["oper"]["id"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["oper"]["name"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["oper"]["country"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["oper"]["mnc"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["oper"]["brand"]) + '%s' % (Handler["oper"]["url"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["country"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["route"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["region"]["id"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["region"]["name"]) + '%s' % (Handler["region"]["okrug"]) + '%s' % (Handler["region"]["english"]) + '%s' % (Handler["region"]["iso"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["region"]["autocod"]) + '%s' % (Handler["region"]["capital"]) + '%s' % (Handler["region"]["country"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                            try:
+                                _info_(View='txt', TEXT='%s' % (Handler["mobile"]), NickName=NickName)
+                            except KeyError:
+                                _info_(View='txt', TEXT='Not Found Information')
+                        elif load_proxy is not None:
+                            try:
+                                send_requests = requests.get(f'https://htmlweb.ru/json/mnp/phone/{Number}', proxies=load_proxy)
+                                answer = send_requests
+                                soup_json = bs4.BeautifulSoup(answer.text, 'html.parser').text.strip()
+                                site_json = json.loads(soup_json)
+                                Handler = site_json
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["status"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["oper"]["id"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["oper"]["name"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["oper"]["country"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["oper"]["mnc"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["oper"]["brand"]) + '%s' % (Handler["oper"]["url"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["country"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["route"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["region"]["id"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["region"]["name"]) + '%s' % (Handler["region"]["okrug"]) + '%s' % (Handler["region"]["english"]) + '%s' % (Handler["region"]["iso"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["region"]["autocod"]) + '%s' % (Handler["region"]["capital"]) + '%s' % (Handler["region"]["country"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                                try:
+                                    _info_(View='txt', TEXT='%s' % (Handler["mobile"]), NickName=NickName)
+                                except KeyError:
+                                    _info_(View='txt', TEXT='Not Found Information')
+                            except requests.exceptions.ProxyError:
+                                _error_(View='str', TEXT='Proxy server not working or no internet access', NickName=Root, Sender='BreakNumber', TypeError='CRITICAL', TypeMSG='Important')
+                                showerror('ERROR', _error_(View='txt', TEXT='Proxy server not working or no internet access', NickName=Root, Sender='BreakNumber', TypeError='CRITICAL', TypeMSG='Important'))
+                                raise HandlerError.UsersCode.other('Proxy server not working or no internet access')
+                except KeyboardInterrupt:
+                    _warning_(View='str', TEXT='KeyboardInterrupt', NickName=Root, TypeMSG='Message')
+                    time.sleep(2)
+                    _error_(View='str', TEXT='KeyboardInterrupt', NickName=Root, Sender='BreakIP', TypeError='WARNING', TypeMSG='Message')
+                    raise Sos1skaKeyboardInterrupt('KeyboardInterrupt, pressed "CTRL+C"')
         class BreakIP:
             ip = bytes
             mode = str
